@@ -3,72 +3,22 @@
 import { BarChart, Compass, Layout, List, Brain, Send, Headset} from 'lucide-react'
 import { usePathname } from 'next/navigation'
 import { SidebarItem } from './sidebar-item'
-
+// Define the link structures for both paradigms
 const guestRoutes = [
-  {
-    icon: Layout,
-    label: 'Dashboard',
-    href: '/',
-  },
-  {
-    icon: Compass,
-    label: 'Browse',
-    href: '/search',
-  },
-
-  {
-    icon: Send,
-    label: 'Discussion',
-    href: '/search',
-
-  },
-
-  {
-    icon:ScrollText,
-    label:'Keep',
-    href: '/keep'
-  },
-
-  {
-    icon:BrainCircuit,
-    label: 'Deep',
-    href: '/deep'
-  },
-  {
-    icon: 
-    label: 'Notification',
-    href: '/notify'
-  }
-]
+  { label: "Dashboard", href: "/", icon: Layout },
+  { label: "Search", href: "/search", icon: Compass },
+  { label: "Keep", href: "/keep", icon: Lightbulb },
+  { label: "Deep", href: "/deep", icon: Brain },
+  { label: "Room", href: "/room", icon: Video },
+];
 
 const teacherRoutes = [
-  {
-    icon: List,
-    label: 'Courses',
-    href: '/teacher/courses',
-  },
-  {
-    icon: BarChart,
-    label: 'Analytics',
-    href: '/teacher/analytics',
-  },
-
-  {
-    icon: Brain,
-    label: 'Quiz Agent',
-    href: '/teacher/quizagent'
-  },
-
-  {
-    icon:Headset,
-    label: 'Meet',
-    href: '/meet'
-  },
-  {
-
-  }
-]
-
+  { label: "Courses", href: "/teacher/courses", icon: List },
+  { label: "Analytics", href: "/teacher/analytics", icon: BarChart },
+  { icon: Video, label: "Meet", href: "/teacher/meet" },
+  { icon: Bot, label: "Quiz Agent", href: "/teacher/quizagent" },
+  { icon: MessageSquare, label: "Thread", href: "/teacher/thread" },
+];
 export const SidebarRoutes = () => {
   const pathname = usePathname()
 
